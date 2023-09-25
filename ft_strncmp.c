@@ -6,9 +6,10 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 22:03:16 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/18 22:08:44 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/25 16:08:34 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int ft_strncmp(char *s1, char *s2, unsigned int n)
 {
@@ -18,9 +19,9 @@ int ft_strncmp(char *s1, char *s2, unsigned int n)
 	{
 		if(s1[1] != s2[i])
 			return(s1[1] - s2[i]);
-		i++
+		i++;
 	}
 	if(i != n)
 		return(s1[i] - s2[i]);
-	return(0)
+	return(0);
 }

@@ -5,23 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 20:28:42 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/18 22:02:43 by sepun            ###   ########.fr       */
+/*   Created: 2023/09/25 16:13:31 by sepun             #+#    #+#             */
+/*   Updated: 2023/09/25 16:13:35 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr (const char *s, int c)
-{
-	char *str;
+#include "libft.h"
 
-	str = (char +)s;
-	while(*str != c)
+char	*ft_strrchr(const char *s, int c)
+{
+	ssize_t i;
+
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		if(*str == NULL)
-		{
-			return(NULL);
-		}
-		str++;
+		if (s[i] == (unsigned char)c)
+			return ((char*)s + i);
+		i--;
 	}
-	return(str);
+	return (0);
 }

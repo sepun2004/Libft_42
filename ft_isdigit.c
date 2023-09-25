@@ -6,16 +6,14 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 16:40:07 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/12 17:09:38 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/25 15:46:52 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
+#include "libft.h"
 
-int ft_isalpha(int x)
+int	ft_isdigit(int x)
 {
 	while ((x >= '0' && x <= '9'))
-	{
 		return (1);
-    }
 	return (0);
 }

@@ -6,12 +6,12 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:53:33 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/12 18:09:17 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/25 15:31:15 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
+#include "libft.h"
 
-size_t ft_strlen(char *str)
+size_t ft_strlen(const char *str)
 {
 	int i;
 	i = 0;
@@ -20,5 +20,5 @@ size_t ft_strlen(char *str)
 	{
 		i++;
 	}
-	return(i)
+	return(i);
 }

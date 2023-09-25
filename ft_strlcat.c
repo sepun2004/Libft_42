@@ -6,9 +6,11 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:57:30 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/19 21:10:55 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/21 21:20:44 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	char	*s;

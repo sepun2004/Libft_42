@@ -6,13 +6,14 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 20:21:58 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/18 20:22:07 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/21 20:29:18 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int ft_tolower (char x)
 {
-	if(x >= 'A' && x<= 'Z'}
+	if(x >= 'A' && x<= 'Z')
 			return(x+32);
 	else
 		return (x);

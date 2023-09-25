@@ -6,9 +6,10 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:16:29 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/18 20:39:09 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/21 17:25:22 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void    *ft_memmove(void *dst, const void *src, size_t len)
 {

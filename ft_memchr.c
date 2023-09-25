@@ -6,9 +6,10 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 22:15:24 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/18 22:15:39 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/25 16:08:59 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void  *ft_memchr(const void *s, int c, size_t n)
 {
@@ -24,7 +25,7 @@ void  *ft_memchr(const void *s, int c, size_t n)
 		if(*str == charac)
 			return (str);
 		str++;
-		i++
+		i++;
 	}
 	return (NULL);
 }

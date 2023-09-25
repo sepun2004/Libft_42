@@ -6,16 +6,14 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 16:42:55 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/12 17:41:52 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/21 17:11:10 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
+#include "libft.h"
 
-int ft_isalpha(int x)
+int	ft_isalpha(int x)
 {
 	while ((x >= 'A' && x <= 'Z') || (x >= 'a' && x <= 'z'))
-	{
 		return (1);
-    }
 	return (0);
 }

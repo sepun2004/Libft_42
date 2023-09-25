@@ -6,9 +6,10 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 21:04:42 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/14 21:05:03 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/21 20:16:23 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {

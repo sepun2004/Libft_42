@@ -6,13 +6,12 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:43:09 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/12 17:45:20 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/21 20:08:14 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include<unistd.h>
-
-int ft_isalpha(int x)
+int ft_isprint(int x)
 {
 	while (x >= 32 && x <= 126)
 	{

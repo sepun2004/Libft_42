@@ -6,13 +6,12 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:16:02 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/12 17:29:12 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/21 20:07:34 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include<unistd.h>
-
-int ft_isalpha(int x)
+int	ft_isascii(int x) 
 {
 	while (x >= 0 && x <= 127)
 	{

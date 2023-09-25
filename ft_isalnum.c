@@ -6,17 +6,14 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:10:42 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/12 18:44:47 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/21 20:58:01 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include<unistd.h>
-
-int ft_isalnum(int x)
+int	ft_isalnum(int x)
 {
-	while ((x >= 'A' && x <= 'Z') || (x >= 'a' && x <= 'z') || (x >= '0' && <='9'))
-	{
+	while ((x >= 'A' && x <= 'Z') || (x >= 'a' && x <= 'z') || (x >= '0' && x <= '9'))
 		return (1);
-    }
 	return (0);
 }

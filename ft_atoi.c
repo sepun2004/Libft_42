@@ -6,11 +6,12 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 15:02:33 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/20 15:02:52 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/25 14:58:20 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	unsigned int	num;
 	int				i;

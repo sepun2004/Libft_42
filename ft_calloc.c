@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 20:21:08 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/21 21:16:42 by sepun            ###   ########.fr       */
+/*   Created: 2023/09/20 15:35:57 by sepun             #+#    #+#             */
+/*   Updated: 2023/09/21 17:04:43 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void *calloc(size_t num_elements, size_t element_size)
 {
-	size_t i;
 
-	if (!dst && !src)
-		return (0);
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	return (dst);
 }
