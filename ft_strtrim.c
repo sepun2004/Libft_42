@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 17:53:33 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/27 18:47:09 by sepun            ###   ########.fr       */
+/*   Created: 2023/09/27 18:49:35 by sepun             #+#    #+#             */
+/*   Updated: 2023/09/29 11:51:05 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-size_t ft_strlen(const char *str)
+char *ft_strtrim(char const *s1, char const *set)
 {
-	int i;
-	i = 0;
+	size_t i;
 
-	while(str[i] != '\0')
-		i++;
-	return(i);
+	i = ft_strlen(s1)
+	if(!s1 || !set)
+		return 0;
+	while(ft_strchr(s1))
 }
-/*int main()
-{
-	char str[4] = "hola";
-	printf("%s",str);
-	return 0;
-}*/

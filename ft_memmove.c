@@ -6,28 +6,42 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:16:29 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/21 17:25:22 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/28 15:13:59 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
+void *ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*s;
-	char	*d;
-	size_t	i;
-
-	s = (char *)src;
-	d = (char *)dst;
+    size_t i;
 	i = 0;
-	if (d > s)
-		while (len-- > 0)
-			d[len] = s[len];
-	else
-		while (i < len)
+
+    if (!dst && !src)
+        return 0;
+    if ((size_t)dst - (size_t)src < len)
+	{
+		i = len - 1;
+		while(i < len)
 		{
-			d[i] = s[i];
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i--;	
+		}
+	}
+	else
+	{
+		while(i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
-	return (dst);
+	}
+	return dst;
 }
+/*int main() {
+    char src1[] = "Hello, World!";
+    char dest1[20];
+
+    ft_memmove(dest1, src1, ft_strlen(src1) + 1);
+    printf("Resultado: %s\n", dest1);
+    return 0;
+}*/

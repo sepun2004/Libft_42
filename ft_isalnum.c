@@ -6,7 +6,7 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:10:42 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/21 20:58:01 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/25 20:55:57 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,3 +17,10 @@ int	ft_isalnum(int x)
 		return (1);
 	return (0);
 }
+/*int main()
+{
+	int x;
+
+	x = 2;
+	printf("%d", ft_isalnum(x));
+}*/

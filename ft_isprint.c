@@ -6,7 +6,7 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:43:09 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/21 20:08:14 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/26 17:18:51 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,3 +19,10 @@ int ft_isprint(int x)
     }
 	return (0);
 }
+/*int main()
+{
+	int x;
+
+	x = 9;
+	printf("%d",ft_isprint(x));
+}*/

@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 17:53:33 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/27 18:47:09 by sepun            ###   ########.fr       */
+/*   Created: 2023/09/26 13:35:04 by sepun             #+#    #+#             */
+/*   Updated: 2023/09/29 12:05:45 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t ft_strlen(const char *str)
+char *ft_strjoin(char const *s1, char const *s2)
 {
+	char *str;
+	int j;
 	int i;
-	i = 0;
-
-	while(str[i] != '\0')
-		i++;
-	return(i);
+	if (s1 && s2)
+	{
+		str = (char *)malloc(sizeof(char)
+				* (ft_strlen(s1) + ft_strlen(s2) + 1));
+		if (str == 0)
+			return(NULL);
+		j = 0;
+		i = 0;
+		while(s1[j])
+		{
+			str[j] = s1 [j];
+			j++;
+		}
+		while(s2[i])
+		{
+			str[j] = s2 [i];
+			i++;
+			j++;
+		}
+		str[j] = '\0';
+		return (str);
+	}
+	return NULL;
 }
-/*int main()
-{
-	char str[4] = "hola";
-	printf("%s",str);
-	return 0;
-}*/
+

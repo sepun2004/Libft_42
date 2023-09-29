@@ -6,7 +6,7 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:32:59 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/25 16:11:17 by sepun            ###   ########.fr       */
+/*   Updated: 2023/09/29 12:24:13 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -14,7 +14,6 @@
 
 # include <string.h>
 # include <stdio.h>
-# include <stdlib.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -33,17 +32,18 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t ft_strlen(const char *str);
 int ft_toupper (int c);
-int ft_tolower (char x);
+int ft_tolower (int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
-int ft_strncmp(char *s1, char *s2, unsigned int n);
+int ft_strncmp(const char *s1,const char *s2, unsigned int n);
 void  *ft_memchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int	ft_atoi(const char *str);
-//void	*ft_calloc(size_t nmemb, size_t size);
-//char	*ft_strdup(const char *str);
-
+void *ft_calloc(size_t count, size_t size);
+char	*ft_strdup(char *src);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
 
 
 #endif

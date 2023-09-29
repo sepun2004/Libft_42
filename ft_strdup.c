@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 17:53:33 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/27 18:47:09 by sepun            ###   ########.fr       */
+/*   Created: 2023/09/26 11:40:32 by sepun             #+#    #+#             */
+/*   Updated: 2023/09/26 13:21:28 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t ft_strlen(const char *str)
+char	*ft_strdup(char *src)
 {
-	int i;
-	i = 0;
+	char	*new;
+	int		i;
+	int		size;
 
-	while(str[i] != '\0')
+	size = 0;
+	while (src[size])
+		++size;
+	if (!(new = malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	i = 0;
+	while (src[i])
+	{
+		new[i] = src[i];
 		i++;
-	return(i);
+	}
+	new[i] = '\0';
+	return (new);
 }
-/*int main()
-{
-	char str[4] = "hola";
-	printf("%s",str);
-	return 0;
+/*int main() {
+	char *source = "aeaewea";
+	
+	printf("%s\n",ft_strdup(source));
+	free(ft_strdup(source));
+    return 0;
 }*/
