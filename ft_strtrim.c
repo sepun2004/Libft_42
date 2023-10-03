@@ -6,16 +6,39 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 18:49:35 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/29 11:51:05 by sepun            ###   ########.fr       */
+/*   Updated: 2023/10/02 12:48:33 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
-{
-	size_t i;
+char        *ft_strtrim(char const *s1, char const *set) 
+ {  
+    int                i; 
+    int                f; 
+    char        *str; 
+  
+    if (!s1 || !set) 
+        return (NULL); 
+    i = 0; 
+    f = ft_strlen(s1) - 1; 
+    while (ft_strchr(set, s1[i]) && i <= f) 
+        i++; 
+    if (i > f) 
+        return (ft_strdup(s1 + f + 1)); 
+    while (ft_strchr(set, s1[f]) && f >= 0) 
+        f--; 
+    str = malloc(f - i + 2); 
+    if (!str) 
+        return (NULL); 
+    ft_strlcpy(str, &s1[i], f - i + 2); 
+        return (str); 
+ }
+/*int main() {
 
-	i = ft_strlen(s1)
-	if(!s1 || !set)
-		return 0;
-	while(ft_strchr(s1))
-}
+    const char *cadena = "* *_.   hola, mundo!    ";
+    const char *conjunto = " * _ .";
+
+
+    char *resultado = ft_strtrim(cadena, conjunto);
+    printf("Cadena resultante: \"%s\"\n", resultado);
+}*/
