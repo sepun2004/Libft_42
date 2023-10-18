@@ -6,7 +6,7 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 15:02:33 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/25 14:58:20 by sepun            ###   ########.fr       */
+/*   Updated: 2023/10/18 12:16:15 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -58,7 +58,7 @@ char *ft_itoa(int n)
 	return (str);
 }
 
-int main() {
+/*int main() {
     int num = -12345; // El número entero que deseas convertir en cadena
 
     char *result = ft_itoa(num);
@@ -71,4 +71,4 @@ int main() {
     }
 
     return 0;
-}
+}*/
