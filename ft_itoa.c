@@ -1,74 +1,74 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 15:02:33 by sepun             #+#    #+#             */
-/*   Updated: 2023/10/18 12:16:15 by sepun            ###   ########.fr       */
+/*   Updated: 2023/10/18 13:27:39 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	ft_digit_count(long int i)
+static char        *ft_array(char *x, unsigned int number, long int len)
 {
-	int	count;
-
-	count = 0;
-	if (i < 0)
-	{
-		i *= -1;
-		count++;
-	}
-	while (i > 0)
-	{
-		i /= 10;
-		count++;
-	}
-	return (count);
+        while (number > 0)
+        {
+                x[len--] = 48 + (number % 10);
+                number = number / 10;
+        }
+        return (x);
 }
 
-char *ft_itoa(int n)
+static long int        ft_len(int n)
 {
-	char		*str;
-	int			i;
-	long int	nb;
+        int                                        len;
 
-	nb = n;
-	i = ft_digit_count(nb);
-	if (!(str = malloc(i * sizeof(char) + 1)))
-		return (0);
-	str[i--] = 0;
-	if (nb == 0)
-	{
-		str = ft_calloc(2, sizeof(char));
-		str[0] = 48;
-	}
-	if (nb < 0)
-	{
-		str[0] = '-';
-		nb = nb * -1;
-	}
-	while (nb > 0)
-	{
-		str[i--] = nb % 10 + '0';
-		nb = nb / 10;
-	}
-	return (str);
+        len = 0;
+        if (n <= 0)
+                len = 1;
+        while (n != 0)
+        {
+                len++;
+                n = n / 10;
+        }
+        return (len);
 }
 
-/*int main() {
-    int num = -12345; // El número entero que deseas convertir en cadena
+char        *ft_itoa(int n)
+{
+        char                                *x;
+        long int                        len;
+        unsigned int                number;
+        int                                        sign;
 
-    char *result = ft_itoa(num);
+        sign = 1;
+        len = ft_len(n);
+        x = (char *)malloc(sizeof(char) * (len + 1));
+        if (!(x))
+                return (NULL);
+        x[len--] = '\0';
+        if (n == 0)
+                x[0] = '0';
+        if (n < 0)
+        {
+                sign *= -1;
+                number = n * -1;
+                x[0] = '-';
+        }
+        else
+                number = n;
+        x = ft_array(x, number, len);
+        return (x);
+}
+/*int        main(void)
+{
+        int i = 0;
+        int tab[5] = {-2147483648, -42, 0, 42, 2147483647};
 
-    if (result != NULL) {
-        printf("Número convertido a cadena: %s\n", result);
-        free(result); // No olvides liberar la memoria asignada dinámicamente
-    } else {
-        printf("Error: No se pudo asignar memoria para la cadena.\n");
-    }
+        while (i < 5)
+                printf("%s\n", ft_itoa(tab[i++]));
 
-    return 0;
+        return 0;
 }*/
