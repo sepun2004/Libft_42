@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 15:02:33 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/25 14:58:20 by sepun            ###   ########.fr       */
+/*   Updated: 2023/10/27 14:50:51 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+t_list *ft_lstnew(void *content)
 {
-	int		count;
-	t_list	*temp;
+	t_list	*lst;
 
-	count = 0;
-	temp = lst;
-	while (temp->next != NULL)
-	{
-		count++;
-		temp = temp->next;
-	}
-	if (temp->next == NULL)
-		count++;
-	return (count);
+	if  (!(lst = (t_list*)malloc(sizeof(*lst))))
+		return (NULL);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }
+/*int main()
+{
+    int numero = 42;
+    t_list *nuevoElemento = ft_lstnew(&numero);
+
+    if (nuevoElemento != NULL)
+    {
+        printf("Nuevo elemento creado con éxito.\n");
+
+        int *contenido = (int *)(nuevoElemento->content);
+        printf("Contenido del elemento: %d\n", *contenido);
+    }
+
+    return 0;
+}*/

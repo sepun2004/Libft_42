@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 15:02:33 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/25 14:58:20 by sepun            ###   ########.fr       */
+/*   Updated: 2023/10/20 16:16:04 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libtf.h"
 
-t_list *ft_lstnew(void *content)
+#include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*lst;
-
-	if  (!(lst = (t_list*)malloc(sizeof(*lst))))
-		return (NULL);
-	lst->content = content;
-	lst->next = NULL;
-	return (lst);
+	while (lst)
+	{
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
+	}
+	return (0);
 }
-/*int main()
-{
-    int numero = 42;
-    t_list *nuevoElemento = ft_lstnew(&numero);
-
-    if (nuevoElemento != NULL)
-    {
-        printf("Nuevo elemento creado con éxito.\n");
-
-        int *contenido = (int *)(nuevoElemento->content);
-        printf("Contenido del elemento: %d\n", *contenido);
-    }
-
-    return 0;
-}*/

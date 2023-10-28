@@ -6,35 +6,39 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 11:52:10 by sepun             #+#    #+#             */
-/*   Updated: 2023/10/18 14:22:02 by sepun            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:05:03 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char        *ft_substr(const char *s, unsigned int start, size_t len)
+char
+        *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	j;
-	unsigned int	len_total;
-	char	*sub;
-	if (!s)
-		return(NULL);
-	len_total = ft_strlen(s);
-	if(start >=  len_total)
-		return(ft_strdup(""));
-	if (len < len_total -start)
-		len = len_total -start;
-	sub = malloc(sizeof(char) * (len + 1));
-	if (sub == NULL)
-		return NULL;
-	j = 0;
-	while (start < len_total && j < len)
-	{
-		sub[j] = s[start];
-		start++;
-		j++;
-	}
-	sub[j] = '\0';
-	return (sub);
+        size_t        i;
+        size_t        j;
+        char        *str;
+		if(!s)
+			return NULL;
+		if (start >= ft_strlen(s))
+			return (ft_strdup(""));
+		if (len > ft_strlen(s + start))
+			len = ft_strlen(s + start);
+		str = malloc(sizeof(char) * (len + 1));
+		if (!str)
+                return (NULL);
+        i = 0;
+        j = 0;
+        while (s[i])
+        {
+                if (i >= start && j < len)
+                {
+                        str[j] = s[i];
+                        j++;
+                }
+                i++;
+        }
+        str[j] = 0;
+        return (str);
 }
 /*int main(void)
 {
