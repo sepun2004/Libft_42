@@ -6,13 +6,12 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:51:59 by sepun             #+#    #+#             */
-/*   Updated: 2023/10/26 14:52:13 by sepun            ###   ########.fr       */
+/*   Updated: 2023/11/02 15:35:07 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-
-void *ft_toupper2 (void *ptr)
+/*void *ft_toupper2 (void *ptr)
 {
     char *temp;
     int i;
@@ -28,35 +27,34 @@ void *ft_toupper2 (void *ptr)
         i++;
     }
     return (temp);
-}
+}*/
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list  *New_list;
-    t_list  *ptr;
-    void *cont;
-    
-    if(!lst || !f || !del)
-        return (NULL);
-    New_list = NULL;
-    ptr = NULL;
-    while(lst != NULL)
-    {
-        cont = f(lst->content);
+	t_list	*Newlist;
+	t_list	*ptr;
+	void *cont;
+
+	Newlist = NULL;
+	ptr = NULL;
+	if(!lst || !f || !del)
+		return (NULL);
+	while(lst != NULL)
+	{
+		cont = f(lst->content);
         ptr = ft_lstnew(cont);
-       //printf("\n\nHOLA\n\n");
         if(!ptr)
         {
             del(cont);
-            ft_lstclear(&New_list, del);
+            ft_lstclear(&Newlist, del);
             return (NULL);
         }
-        ft_lstadd_front(&New_list, ptr);
+        ft_lstadd_back(&Newlist, ptr);
         lst = lst->next;
     }
-    return (New_list);
+    return (Newlist);
 }
-int main()
+/*int main()
 {
     t_list *nodo1;
     t_list *nodo2;
@@ -80,4 +78,4 @@ int main()
     }
 
 
-}
+}*/

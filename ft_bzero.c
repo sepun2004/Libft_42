@@ -6,18 +6,21 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 14:48:03 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/26 17:17:09 by sepun            ###   ########.fr       */
+/*   Updated: 2023/11/02 14:58:18 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n) {
-    size_t i = 0;
-    unsigned char *s2;
-    
-    s2 = (unsigned char *)s;
-    while (i < n) {
-        s2[i] = 0;
-        i++;
-    }
+void	ft_bzero(void *s, size_t n)
+{
+	size_t			i;
+	unsigned char	*s2;
+
+	i = 0;
+	s2 = (unsigned char *)s;
+	while (i < n)
+	{
+		s2[i] = 0;
+		i++;
+	}
 }

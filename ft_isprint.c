@@ -6,17 +6,15 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:43:09 by sepun             #+#    #+#             */
-/*   Updated: 2023/09/26 17:18:51 by sepun            ###   ########.fr       */
+/*   Updated: 2023/11/02 15:19:06 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_isprint(int x)
+int	ft_isprint(int x)
 {
 	while (x >= 32 && x <= 126)
-	{
 		return (1);
-    }
 	return (0);
 }
 /*int main()
