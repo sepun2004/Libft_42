@@ -6,30 +6,30 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:14:12 by sepun             #+#    #+#             */
-/*   Updated: 2023/10/03 13:28:00 by sepun            ###   ########.fr       */
+/*   Updated: 2023/11/03 17:33:24 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    char *sptr;
-    int count;
+	char	*sptr;
+	int		count;
 
-    if (!s || !f)
-        return NULL;
-    if (!(sptr = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
-        return NULL;
-    count = 0;
-    while (s[count])
-    {
-        sptr[count] = f(count, s[count]);
-        ++count;
-    }
-    sptr[count] = '\0';
-    return sptr;
+	if (!s || !f)
+		return (NULL);
+	sptr = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!sptr)
+		return (NULL);
+	count = 0;
+	while (s[count])
+	{
+		sptr[count] = f(count, s[count]);
+		++count;
+	}
+	sptr[count] = '\0';
+	return (sptr);
 }
-
 /*char funcion_prueba_topper(unsigned int index, char c)
 {
     if(c >= 'a' && c <= 'z')

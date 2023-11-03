@@ -6,7 +6,7 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:29:03 by sepun             #+#    #+#             */
-/*   Updated: 2023/10/03 13:31:33 by sepun            ###   ########.fr       */
+/*   Updated: 2023/11/03 17:21:12 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -24,7 +24,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
-
 
 /*void print_index_char(unsigned int index, char *c) {
     printf("Índice: %u, Carácter: %c\n", index, *c);

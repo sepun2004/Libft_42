@@ -6,16 +6,15 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 18:07:17 by sepun             #+#    #+#             */
-/*   Updated: 2023/10/24 13:13:59 by sepun            ###   ########.fr       */
+/*   Updated: 2023/11/03 20:18:56 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-
 static int	ft_count_word(char const *s, char c)
 {
-	int i;
-	int word;
+	int	i;
+	int	word;
 
 	i = 0;
 	word = 0;
@@ -46,14 +45,15 @@ static int	ft_size_word(char const *s, char c, int i)
 	return (size);
 }
 
-static void	ft_free(char **strs, int j)
+static char	**ft_free(char **strs, int j)
 {
 	while (j-- > 0)
 		free(strs[j]);
 	free(strs);
+	return (NULL);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		word;
@@ -64,21 +64,19 @@ char		**ft_split(char const *s, char c)
 	i = 0;
 	j = -1;
 	word = ft_count_word(s, c);
-	if (!(strs = (char **)malloc((word + 1) * sizeof(char *))))
+	strs = ft_calloc(word + 1, sizeof(char *));
+	if (!strs)
 		return (NULL);
 	while (++j < word)
 	{
 		while (s[i] == c)
 			i++;
 		size = ft_size_word(s, c, i);
-		if (!(strs[j] = ft_substr(s, i, size)))
-		{
-			ft_free(strs, j);
-			return (NULL);
-		}
+		strs[j] = ft_substr(s, i, size);
+		if (!strs[j])
+			return (ft_free(strs, j));
 		i += size;
 	}
-	strs[j] = 0;
 	return (strs);
 }
 

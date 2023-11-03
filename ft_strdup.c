@@ -6,12 +6,12 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 11:40:32 by sepun             #+#    #+#             */
-/*   Updated: 2023/10/02 12:19:50 by sepun            ###   ########.fr       */
+/*   Updated: 2023/11/03 17:18:28 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char *ft_strdup(const char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*new;
 	int		i;
@@ -20,7 +20,8 @@ char *ft_strdup(const char *src)
 	size = 0;
 	while (src[size])
 		++size;
-	if (!(new = malloc(sizeof(char) * (size + 1))))
+	new = malloc(sizeof(char) * (size + 1));
+	if (!new)
 		return (NULL);
 	i = 0;
 	while (src[i])

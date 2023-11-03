@@ -6,12 +6,12 @@
 /*   By: sepun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:29:03 by sepun             #+#    #+#             */
-/*   Updated: 2023/10/18 13:11:42 by sepun            ###   ########.fr       */
+/*   Updated: 2023/11/03 15:19:09 by sepun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd, &c, 1);
+	write (fd, &c, 1);
 }
