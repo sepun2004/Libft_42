@@ -8,7 +8,7 @@ RM = rm -f
 CC = gcc
 
 
-CCFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 
 INCLUDE = libft.h 
 
@@ -62,9 +62,6 @@ BONUSSRC = ft_lstnew_bonus.c \
 
 BONUSOBJ = $(BONUSSRC:.c=.o)
 
-
-re : fclean all
-
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
@@ -72,14 +69,19 @@ all : $(NAME)
 $(NAME): $(OBJ) $(INCLUDE)
 	$(LIB) $(NAME) $(OBJ)
 
-bonus: $(BONUSOBJ) $(INCLUDE)
-	$(LIB) $(NAME) $(BONUSOBJ)
 
+.bonus: $(BONUSOBJ) $(INCLUDE)
+	$(LIB) $(NAME) $(BONUSOBJ)
+	@touch .bonus
+
+bonus: .bonus
+	@echo "bonus done!!"
 $.o : %.c
 	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ) $(BONUSOBJ)
+	$(RM) .bonus
 
 fclean: clean
 	$(RM) $(NAME)
